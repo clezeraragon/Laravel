@@ -48,7 +48,12 @@ class Produto extends Eloquent
 //    protected $fillable = array('nome', 'descrisao', 'valor');
     use SoftDeletingTrait;
 //    protected $dates = ['deleted_at'];
+    public  static $rules = array(
+       'nome' => 'required',
+       'valor' => 'required',
+       'descrisao' => 'required'
 
+   ); # para validar os campos antes de inserir no banco
     public function categoria(){
 //          echo 'teste  ';
         # Para pegarmos os valores devemos passar o segundo parametro que é a chave estrangeira ex : 'categoria_id', isso vai ser exibido na HomeController
